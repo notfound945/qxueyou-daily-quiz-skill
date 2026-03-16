@@ -169,6 +169,8 @@ Always include:
 - wrong question types
 - newly added wrong-book questions
 - removed wrong-book questions
+- full option text when showing answers and analyses
+- bold the correct answer option content instead of showing only a letter
 
 Use this response shape:
 
@@ -190,13 +192,19 @@ Use this response shape:
 ## 错题与解析
 
 ### 2. [多选题] 题目内容
+- A. 选项一
+- B. **选项二**
+- C. **选项三**
+- D. **选项四**
 - 你的答案：AC
-- 正确答案：ABC
+- 正确答案：**B / 选项二；C / 选项三；D / 选项四**
 - 解析：...
 
 ### 7. [判断题] 题目内容
+- A. **正确**
+- B. 错误
 - 你的答案：B
-- 正确答案：A
+- 正确答案：**A / 正确**
 - 解析：...
 
 ## 错题本提示
@@ -207,6 +215,14 @@ Use this response shape:
 
 If the user got a question correct, you may keep it concise.
 Focus detailed analysis on wrong questions unless the user explicitly asks for full per-question review.
+
+When presenting any answer explanation:
+
+- always include the full option list for that question
+- never only say `正确答案：B`
+- instead, map the answer key back to the actual option text
+- bold the correct option content so the user can identify it at a glance
+- for multiple-choice questions, bold every correct option
 
 If the grade output includes newly added wrong-book items:
 
