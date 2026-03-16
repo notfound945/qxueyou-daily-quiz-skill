@@ -43,6 +43,71 @@ qxueyou-daily-quiz/
 
 如果题库文件还没生成，需要先在源码仓库中执行导出流程。
 
+## 安装方式
+
+如果你是通过 GitHub Release 获取这个 Skill，推荐按下面方式安装。
+
+### 1. 下载 Release 压缩包
+
+从公开仓库的 Release 页面下载最新压缩包。
+
+也可以使用 `curl` 直接下载 Release 资产：
+
+```bash
+curl -L -o qxueyou-daily-quiz.zip "<release-asset-url>"
+```
+
+如果你已经拿到具体的 release 下载地址，把上面的 `<release-asset-url>` 替换成真实链接即可。
+
+压缩包解压后，应得到一个完整的：
+
+```text
+qxueyou-daily-quiz/
+```
+
+目录。
+
+### 2. 放到 skills 目录下
+
+将解压后的 `qxueyou-daily-quiz/` 目录放到你的 Skill 目录中。
+
+例如项目级目录：
+
+```text
+.cursor/skills/qxueyou-daily-quiz/
+```
+
+或者如果你的环境使用仓库内 `skills/` 目录，也可以放到：
+
+```text
+skills/qxueyou-daily-quiz/
+```
+
+### 3. 确认目录结构
+
+安装完成后，目录至少应包含：
+
+```text
+qxueyou-daily-quiz/
+├── README.md
+├── SKILL.md
+├── reference.md
+├── data/
+│   └── qxueyou_questions.jsonl
+└── scripts/
+    └── quiz_manager.py
+```
+
+### 4. 如果没有题库文件
+
+如果 Release 包中不包含你需要的最新题库数据，或者你想替换成自己的题库，请将题库文件放到：
+
+```text
+data/qxueyou_questions.jsonl
+```
+
+该文件必须是 `jsonl` 格式。
+
 ## 常用命令
 
 以下命令默认在 `qxueyou-daily-quiz/` 目录下执行。
