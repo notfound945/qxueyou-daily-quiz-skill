@@ -188,8 +188,8 @@ def save_wrong_book_active(
 
 
 def normalize_answer(answer: str, question_type: str) -> str:
-    raw = "".join(ch for ch in answer.upper() if ch.isalnum())
-    if question_type == "多选题":
+    raw = "".join(ch for ch in str(answer).upper() if 'A' <= ch <= 'Z')
+    if "多选" in question_type:
         seen: list[str] = []
         for char in raw:
             if char not in seen:
